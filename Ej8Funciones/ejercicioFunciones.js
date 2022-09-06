@@ -20,21 +20,16 @@ myAsinc()
 ////////////////////////////////
 
 function* generarId() {
-    let id = 2;
-    while (id < 2) {
-        id++
-        if (id % 2 == 0) {
-            return id
-        }
-        yield id
-    }
+  let id = 0;
+  while (true) {
+      id +=2;
+      yield id;
+  }
 }
 
 const gen = generarId();
 
-console.log(gen.next())
-console.log(gen.next())
-console.log(gen.next())
-console.log(gen.next())
-console.log(gen.next())
-console.log(gen.next())
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next());
+console.log(gen.next());
