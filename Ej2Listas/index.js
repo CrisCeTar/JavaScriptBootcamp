@@ -1,3 +1,4 @@
+//Objeto dentro de un objeto
 const listaDatos = {
     nombre: "Cristina",
     edad: 26,
