@@ -1,0 +1,14 @@
+{
+    "env": {
+        "commonjs": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        // Override our default settings just for this directory
+        "eqeqeq": "warn",
+        "strict": "off",
+        "quotes": ["error", "double"]
+    }
+}
