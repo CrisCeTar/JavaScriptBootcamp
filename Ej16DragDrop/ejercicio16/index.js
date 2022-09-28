@@ -1,6 +1,6 @@
 const parrafos = document.querySelectorAll('.parrafo');
 const secciones = document.querySelectorAll('.seccion');
-const papelera = document.querySelectorAll('.papelera');
+const papelera = document.querySelector('.papelera');
 
 parrafos.forEach(parrafo => {
     parrafo.addEventListener("dragstart", event => { 
@@ -10,15 +10,12 @@ parrafos.forEach(parrafo => {
     parrafo.addEventListener("dragend", () => {
         parrafo.classList.remove("dragging")
     })
-    // papelera.addEventListener("drop", event => {
-    //     event.dataTransfer.clearData("parrafo")
-    // })
 })
 
 secciones.forEach(seccion => {
     seccion.addEventListener("dragover", event => {
         event.preventDefault()
-        event.dataTransfer.dropEffect = "copy"
+        event.dataTransfer.dropEffect = "move"
     })
     seccion.addEventListener("drop", event => {
         const id_parrafo = event.dataTransfer.getData("id")
@@ -27,7 +24,13 @@ secciones.forEach(seccion => {
     })    
 })
 
-if ("drop") {
-    document.querySelectorAll(".parrafo").remove()
-}
+papelera.addEventListener("dragover", event => {
+    event.preventDefault()
+    event.dataTransfer.dropEffect = "copy"
+})
+papelera.addEventListener("drop", event => {
+    const id_parrafo = event.dataTransfer.getData("id")
+    document.getElementById(id_parrafo).remove()
+})
+
 
