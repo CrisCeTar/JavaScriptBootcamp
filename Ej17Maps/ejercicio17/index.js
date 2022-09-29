@@ -11,6 +11,7 @@ function initMap() {
     })
 
     //CHINCHETAS
+    // markers.push(?
     const marker1 = new google.maps.Marker({
         position: { lat:42.88304633219152, lng:-9.272173145464077},
         map,
